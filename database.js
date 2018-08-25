@@ -55,6 +55,25 @@ class Database {
       })
     })
   }
+
+  /*
+  - Function to get all the blocks stored in the database.
+  */
+  getChainFromDB() {
+    return new Promise((resolve, reject) => {
+      let chain = []
+      this.db.createReadStream()
+        .on('data', data => {
+          chain.push(JSON.parse(data.value))
+        })
+        .on('error', err => {
+          reject(err)
+        })
+        .on('close', () => {
+          resolve(chain)
+        })
+    })
+  }
 }
 
 module.exports = Database

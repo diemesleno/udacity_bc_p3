@@ -110,6 +110,16 @@ class Blockchain {
       })
     }
   }
+
+
+  /*
+    - Get all the chains stored in the blockchain.
+  */
+
+  async getChain(){
+    const chain = await this.database.getChainFromDB()
+    return chain
+  }
 }
 
 module.exports = Blockchain
