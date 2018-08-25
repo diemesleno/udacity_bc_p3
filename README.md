@@ -1,4 +1,4 @@
-# Blockchain API v1
+# Udacity Nanodegree Blockchain API v1.0.1 - Project 3
 
 Simple API to get the blocks by height and create new blocks
 
